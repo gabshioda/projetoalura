@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap'); /*Fontes importadas do Google Fonts*/
+
+:root{  /*Variáveis para definir cores, melhor do que trocar uma por uma*/
+    --cor-primaria: #2C3639;
+    --cor-secundaria: #DCD7C9;
+    --cor-terciaria: #A27B5C;
+    --cor-hover: #3F4E4F;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*height: 100vh;  É a definição que a altura da tela é de 100 % do viewport hight(vh), ou seja, o body vai pegar 100% da tela*/
+    box-sizing: border-box; /*Garante que nada irá sair do body e ficará tudo alinhado para dentro dele*/
+    background-color: var(--cor-primaria); /*Define a cor de fundo da página*/
+    color: var(--cor-secundaria); /*Aplicando as variáveis de cor*/
+}
+
+h1{
+    font-weight: bold;
+}
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu__link{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.apresentacao{ /*Classe utilizada no main*/
+    padding: 5% 15%; /*No inicio do código foi definido que a margem era 0 pra tudo, mas aqui é definida como 10%
+     pra somente o que está dentro do main e a imagem é jogada mais para o centro da tela*/
+    display: flex; /*Alinha tudo na mesma linha e deve ser adicionado no elemento pai, no caso aqui o elemento pai é o <main>,
+     então tudo dentro dele vai ficar alinhado na mesma linha, por padrão o flexbox deixa tudo alinhado na mesma linha*/
+    align-items: center; /*Alinha para o centro de acordo com o elemento de maior altura, que no caso é a imagem*/
+    justify-content: space-between; /*Irá espaçar os elementos filhos para o lado*/
+    gap: 82px;
+}
+
+.apresentacao__conteudo{ /*Classe da section*/
+    width: 50%; /*Largura do texto*/
+    display: flex;
+    flex-direction: column; /* Deixa como column e deixa tudo na vertical*/
+    gap: 40px; /* O gap define o espaçamento entre linhas e colunas do grid, flex e multi-column*/
+}
+
+.apresentacao__conteudo__titulo{ /*Classe do título*/
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria); /*Fonte instanciada no título*/
+}
+
+.apresentacao__conteudo__texto{/*Classe do texto*/
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria); /*Fonte instanciada no texto*/
+    text-decoration: none;
+    
+}
+
+.apresentacao__links{ /*Classe da div que está configurando o espaçamento dos botões*/
+    display: flex; /*Mesmo conceito de flexbox utilizado no .apresentação acima,
+     que irá deixar os botões alinhados na mesma linha e lado a lado no justify content*/
+    justify-content: space-between;
+    flex-direction: column; /*Deixa os elementos alinhados como colunas em vez de linhas*/
+    align-items: center; /*Alinha o eixo vertical*/
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+
+}
+
+.apresentacao__links__navegacao{ /*Classe que irá definir cor e layout dos botões*/
+    /*background-color: #22D4FD; Cor de fundo dos botões*/
+    display: flex;
+    justify-content: center; /*Alinha o texto e imagens no centro do botão*/
+    gap: 16px;
+    width: 50%; /*Define a largura dos botões*/
+    text-align: center; /*É o alinhamento do texto, nesse caso definido como no centro*/
+    border: 2px solid var(--cor-terciaria); /*Deixa a aparecia do botão só com bordas*/
+    border-radius: 8px; /*É o raio de arredondamento da borda, isso que deixou os botões arredondados ou mais grossos*/
+    font-size: 1.5rem; /*Aumentou o tamanho da fonte dos botões*/
+    font-weight: 600; /* Deixa mais grossa, com um tom mais escuro*/
+    padding: 21.5px 0; /*Distancia entre o padding e o texto do botão, o primeiro valor (21.5) é sempre o vertical e o segundo o horizontal.*/
+    text-decoration: none;/*Retira a decoração, nesse caso, o sublinhado nos textos dos botões*/
+    color: var(--cor-secundaria); /*Cor das letras dos botões*/
+    font-family: var(--fonte-secundaria); /*Fonte do botões*/
+    
+}
+
+.apresentacao__links__link:hover{ /*O hover serve para quando passamos o mouse em cima do botão ele destaque outra cor*/
+    background-color: var(--cor-hover); /*cor aplicada com variavel*/
+    padding: 3%;
+}
+
+.apresentacao__conteudo__texto:hover{
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/*img:hover{
+    width: 600px;
+}*/
+
+.apresentacao__imagem{
+    width: 50%;
+}
+
+.rodape{
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    padding: 24px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.apresentacao__conteudo__texto a{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+.ajuste__titulo{
+    font-size: 1.5rem;
+    font-family: var (--fonte-secundaria); /*fonte instanciada com variaveis*/
+}
+
+.imagem{
+    width: 600px;
+    border-radius: 10%;
+    height: 900px;
+    object-fit:cover;
+}
+
+@media (max-width: 1200px){ /*media querie*/
+    .cabecalho{
+        padding: 10%;
+    }
+    
+    .cabecalho__menu{
+        justify-content: center;
+    }
+    
+    
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo{
+        width: auto;  /*a width antes definida como 50% para pagina web, agora é definida como "auto" no responsivo e se ajusta automaticamente a página. No lugar do auto tbm pode declarar como 100% que irá acompanhar a tela do mesmo jeito*/
+    }
+}
